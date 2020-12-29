@@ -1,0 +1,22 @@
+{
+  "name": "pockettooling",
+  "version": "1.0.0",
+  "description": "based on: https://github.com/karlicoss/pockexport",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/klausbreyer/pockettooling.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/klausbreyer/pockettooling/issues"
+  },
+  "homepage": "https://github.com/klausbreyer/pockettooling#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

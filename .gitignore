@@ -1,3 +1,5 @@
 __pycache__
 export.json
 pocketsecrets.py
+node_modules
+.vscode
