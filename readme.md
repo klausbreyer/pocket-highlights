@@ -1,8 +1,15 @@
-based on: https://github.com/karlicoss/pockexport
+# Pocket Tooling
 
-result see here: https://klausbreyer.github.io/pockettooling/
+Extracts my Highlights from Pocket ( https://app.getpocket.com ) and brings it in an format where it is easy copy & pastable in roam ( https://roamresearch.com ).
 
-for dev: Makefile
+While doing so, my highlights are also publicly available: https://klausbreyer.github.io/pockettooling/
 
-for prod: github action
+## Documentation 
+* Based on this Python Package: https://github.com/karlicoss/pockexport
+* Extented by my individual convert Script in Node
+* Publishing it to a github page.
+
+## Development
+* for dev: Makefile
+* for prod: github action
 
