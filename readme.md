@@ -1,6 +1,8 @@
 based on: https://github.com/karlicoss/pockexport
 
-install:
-pip3 install --user git+https://github.com/karlicoss/pockexport
+result see here: https://klausbreyer.github.io/pockettooling/
 
-run: make start
+for dev: Makefile
+
+for prod: github action
+
