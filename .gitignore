@@ -1,6 +1,7 @@
 __pycache__
 export.json
-pocketsecrets.py
-node_modules
+.env
+!.env.dist
 .vscode
-highlights.html
+index.html
+dist

@@ -1,6 +1,5 @@
 const input = require('./export.json')
 const fs = require('fs')
-const express = require('express')
 
 
 const object1 = input.list
@@ -28,17 +27,5 @@ const content = filtered.reverse().map(item => {
 }).join("")
 
 
-const full = `<title>Pocket Highlights</title>${content}`;
 
-fs.writeFileSync('highlights.html', full)
-
-const app = express()
-const port = 3000
-
-app.get('/', (req, res) => {
-    res.send(full)
-})
-
-app.listen(port, () => {
-    console.log(`Example app listening at http://localhost:${port}`)
-})
+fs.writeFileSync('dist/index.html', `<title>Pocket Highlights</title>${content}`)
