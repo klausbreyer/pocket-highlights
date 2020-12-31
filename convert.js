@@ -23,9 +23,9 @@ const content = filtered.reverse().map(item => {
     const annotated = item.annotations[0].created_at;
     const annotations = item.annotations.map(annotation => `<li>${annotation.quote}`)
 
-    return `<h1>${item.resolved_title}${authors.length > 0 ? ', ' : ''}${authors.join(",")}, ${annotated.split("-").shift()}</h1><aside>${annotated}: ${item.excerpt} </aside><ul><li><a href="${item.resolved_url}" target="_blank">${item.resolved_url}</a></li>${annotations}</ul><hr />\n`;
+    return `<h2>${item.resolved_title}${authors.length > 0 ? ', ' : ''}${authors.join(",")}, ${annotated.split("-").shift()}</h2><aside>${annotated}: ${item.excerpt} </aside><ul><li><a href="${item.resolved_url}" target="_blank">${item.resolved_url}</a></li>${annotations}</ul><hr />\n`;
 }).join("")
 
 
 
-fs.writeFileSync('dist/index.html', `<title>Pocket Highlights</title>${content}`)
+fs.writeFileSync('dist/index.html', `${fs.readFileSync("theme/header.html")}${content}${fs.readFileSync("theme/footer.html")}`)

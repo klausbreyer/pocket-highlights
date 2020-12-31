@@ -1,13 +1,16 @@
-# Pocket Tooling
+# Pocket-Highlights
 
-Extracts my Highlights from Pocket ( https://app.getpocket.com ) and brings it in an format where it is easy copy & pastable in roam ( https://roamresearch.com ).
+I started this open source project to extracts my Highlights from [Pocket](https://app.getpocket.com) and optimize the format for easy copy & paste into [Roam Research](https://roamresearch.com).
 
-While doing so, my highlights are also publicly available: https://klausbreyer.github.io/pockettooling/
+While doing so, my personal extracted highlights are also publicly available: https://pocket.v01.io
 
 ## Documentation 
-* Based on this Python Package: https://github.com/karlicoss/pockexport
-* Extented by my individual convert Script in Node
-* Publishing it to a github page.
+* The core is based on this Python Package: https://github.com/karlicoss/pockexport
+* But it is extented by my individual convert Script in Node to create html.
+* The whole thing is then published daily init to a github page.
+
+## Setup
+* Fork this repository. 
 
 ## Development
 * for dev: Makefile
