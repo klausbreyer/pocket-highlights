@@ -1,15 +1,20 @@
 # Pocket-Highlights
 
-I started this open source project to extracts my Highlights from [Pocket](https://app.getpocket.com) and optimize the format for easy copy & paste into [Roam Research](https://roamresearch.com).
-
-While doing so, my personal extracted highlights are also publicly available: https://pocket.v01.io
+![Pocket-Highlights](https://v01.io/wp-content/uploads/2020/12/2020-12-31-v01-pocket-highlights.png "Pocket-Highlights")
 
 
+An open source project to format exported highlights from [Pocket](https://app.getpocket.com) in plain html, so that they are is easy to copy & paste (e.g. into [Roam Research](https://roamresearch.com)). 
+
+You can see an example (meaning my personal, daily updated, Pocket highlights) here: https://pocket.v01.io
+
+Read more on my Blog Post: https://v01.io/2020/12/31/pocket-highlights/
+
+## About 
 * The core is based on this Python Package: https://github.com/karlicoss/pockexport
 * But it is extented by my individual convert Script in Node to create html.
 * The whole thing is then published daily init to a github page.
 
-## Create your own instance
+## Installation / create your own instance
 * Fork this repository for yourself.
 * Set Github repository secrets
     * __CONSUMER_KEY__: Your Pocket consumer key, [see here how to obtain them by using the _chaotic way_](https://github.com/karlicoss/pockexport)
@@ -19,7 +24,7 @@ While doing so, my personal extracted highlights are also publicly available: ht
 
 
 ## Development
-Everything is step by step described in the files provided for this purpose.
+Everything is step by step described in the respective files.
 * __Dev__: [Makefile](https://github.com/klausbreyer/pocket-highlights/blob/main/Makefile)
 * __Drod__: [Github workflow](https://github.com/klausbreyer/pocket-highlights/blob/main/.github/workflows/main.yml)
 
