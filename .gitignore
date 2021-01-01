@@ -3,5 +3,3 @@ export.json
 .env
 !.env.dist
 .vscode
-index.html
-dist
