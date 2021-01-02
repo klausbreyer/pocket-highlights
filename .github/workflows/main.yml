@@ -28,9 +28,7 @@ jobs:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
 
       - name: Convert
-        run: |
-          mkdir dist
-          node convert.js
+        run: node convert.js
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@3.7.1
