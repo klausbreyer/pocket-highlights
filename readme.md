@@ -2,7 +2,6 @@
 
 ![Pocket-Highlights](https://v01.io/wp-content/uploads/2020/12/2020-12-31-v01-pocket-highlights.png "Pocket-Highlights")
 
-
 An open source project to format exported highlights from [Pocket](https://app.getpocket.com) in plain html, so that they are is easy to copy & paste (e.g. into [Roam Research](https://roamresearch.com)). 
 
 You can see an example (meaning my personal, daily updated, Pocket highlights) here: https://pocket.v01.io
