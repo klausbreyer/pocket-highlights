@@ -11,10 +11,10 @@ for (const [key, value] of Object.entries(fullList)) {
 
 const content = reducedList
   .sort((a, b) => {
-    if (a.annotations[0].created_at > b.annotations[0].created_at) {
+    if (a.annotations[0].created_at < b.annotations[0].created_at) {
       return -1;
     }
-    if (a.annotations[0].created_at < b.annotations[0].created_at) {
+    if (a.annotations[0].created_at > b.annotations[0].created_at) {
       return 1;
     }
     return 0;
@@ -32,15 +32,16 @@ const content = reducedList
       (annotation) => `<li>${annotation.quote}`
     );
 
-    return `<h2>${item.resolved_title}${
+    const title = `${item.resolved_title}${
       authors.length > 0 ? ", " : ""
-    }${authors.join(",")}, ${annotated
-      .split("-")
-      .shift()}</h2><aside>${annotated}: ${
-      item.excerpt
-    } </aside><ul><li><a href="${item.resolved_url}" target="_blank">${
-      item.resolved_url
-    }</a></li>${annotations}</ul><hr />\n`;
+    }${authors.join(",")}, ${annotated.split("-").shift()}`;
+
+    const hash = encodeURIComponent(title);
+    return `<h2 id="${hash}">
+    <a href="#${hash}">
+    ${title}</a>
+    </h2>
+    <aside>${annotated}: ${item.excerpt} </aside><ul><li><a href="${item.resolved_url}" target="_blank">${item.resolved_url}</a></li>${annotations}</ul><hr />\n`;
   })
   .join("");
 
@@ -50,3 +51,10 @@ fs.writeFileSync(
     "theme/footer.html"
   )}`
 );
+
+async function sha256(source) {
+  const sourceBytes = new TextEncoder().encode(source);
+  const digest = await crypto.subtle.digest("SHA-256", sourceBytes);
+  const resultBytes = [...new Uint8Array(digest)];
+  return resultBytes.map((x) => x.toString(16).padStart(2, "0")).join("");
+}
