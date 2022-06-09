@@ -19,7 +19,7 @@ const content = reducedList
     }
     return 0;
   })
-  .map((item) => {
+  .map((item, i) => {
     //evtl. datum. evt. autor
     const authors = [];
     if (item.authors) {
@@ -36,12 +36,8 @@ const content = reducedList
       authors.length > 0 ? ", " : ""
     }${authors.join(",")}, ${annotated.split("-").shift()}`;
 
-    const hash = encodeURIComponent(title);
-    return `<h2 id="${hash}">
-    <a href="#${hash}">
-    ${title}</a>
-    </h2>
-    <aside>${annotated}: ${item.excerpt} </aside><ul><li><a href="${item.resolved_url}" target="_blank">${item.resolved_url}</a></li>${annotations}</ul><hr />\n`;
+    return `<h2>${title}</h2>
+    <aside><a href="#${i}" id="${i}">&#x23;${i}</a>, ${annotated}: ${item.excerpt} </aside><ul><li><a href="${item.resolved_url}" target="_blank">${item.resolved_url}</a></li>${annotations}</ul><hr />\n`;
   })
   .join("");
 
