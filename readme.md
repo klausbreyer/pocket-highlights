@@ -1,3 +1,7 @@
+# NO LONGER MAINTAINED
+
+[In favor of my new approach with readwise reader.](https://github.com/klausbreyer/all-the-highlights)
+
 # Pocket-Highlights
 
 ![Pocket-Highlights](https://v01.io/wp-content/uploads/2020/12/2020-12-31-v01-pocket-highlights.png "Pocket-Highlights")
