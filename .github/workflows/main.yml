@@ -1,39 +1,39 @@
-#name: CI
+name: CI
 
-#on:
-#  push:
-#    branches: [ main ]
-#  schedule:
-#    - cron:  '0 0 * * *'
-#  workflow_dispatch:
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "0 0 * * *"
+  workflow_dispatch:
 
-#jobs:
-#  build:
-#    runs-on: ubuntu-latest
+jobs:
+  build:
+    runs-on: ubuntu-latest
 
-#    steps:
-#      - uses: actions/checkout@v2
+    steps:
+      - uses: actions/checkout@v2
 
-#      - name: Setup
-#        run: |
-#          sudo apt-get install python3-pip 
-#          pip3 install --upgrade setuptools
-#          pip3 install --user git+https://github.com/karlicoss/pockexport
+      - name: Setup
+        run: |
+          sudo apt-get install python3-pip
+          pip3 install --upgrade setuptools
+          pip3 install --user git+https://github.com/karlicoss/pockexport
 
-#      - name: Export
-#        run: |
-#          python3 -m pockexport.export --secrets pocketsecrets.py > export.json
-#        env:
-#          CONSUMER_KEY: ${{ secrets.CONSUMER_KEY }}
-#          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+      - name: Export
+        run: |
+          python3 -m pockexport.export --secrets pocketsecrets.py > export.json
+        env:
+          CONSUMER_KEY: ${{ secrets.CONSUMER_KEY }}
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
 
-#      - name: Convert
-#        run: node convert.js
+      - name: Convert
+        run: node convert.js
 
-#      - name: Deploy
-#        uses: JamesIves/github-pages-deploy-action@3.7.1
-#        with:
-#          GITHUB_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
-#          BRANCH: gh-pages # The branch the action should deploy to.
-#          FOLDER: dist # The folder the action should deploy.
-#          CLEAN: true # Automatically remove deleted files from the deploy branch
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@3.7.1
+        with:
+          GITHUB_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
+          BRANCH: gh-pages # The branch the action should deploy to.
+          FOLDER: dist # The folder the action should deploy.
+          CLEAN: true # Automatically remove deleted files from the deploy branch
